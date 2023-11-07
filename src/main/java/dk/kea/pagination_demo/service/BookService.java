@@ -20,6 +20,10 @@ public class BookService {
         return bookRepository.findAllByAuthorLikeIgnoreCase(author, pageable);
     }
 
+    public Page<Book> getAllBooksByTitle(String title, Pageable pageable) {
+        return bookRepository.findAllByTitleLikeIgnoreCase(title, pageable);
+    }
+
     public Page<Book> getAllBooksByTitleAndAuthor(String title, String author, Pageable pageable) {
         return bookRepository.findByTitleAndAuthorContainingIgnoreCase(title, author, pageable);
     }
